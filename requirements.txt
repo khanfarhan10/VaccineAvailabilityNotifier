@@ -7,3 +7,4 @@ gunicorn # Deployment to Heroku
 
 Flask
 requests
+Flask-APScheduler
