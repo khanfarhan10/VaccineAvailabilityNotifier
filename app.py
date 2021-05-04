@@ -22,6 +22,19 @@ def home():
     return render_template('index.html')
 
 
+@app.route('/register', METHODS=["GET", "POST"])
+def register():
+    try:
+        form_title = request.form["title"]
+        form_year = request.form["year"]
+        movie = Movie(form_title, year=int(form_year) if form_year else None)
+        db = current_app.config["db"]
+        movie_key = db.add_movie(movie)
+        return redirect(url_for("movie_page", movie_key=movie_key))
+    except:
+        return "Incorrect Data Entered."
+
+
 if __name__ == "__main__":
     app.run()
 """
@@ -36,5 +49,3 @@ if __name__ == '__main__':
         send_mail(body, receiver_email=mail,
                   subject='VACCINE AVAILABILITY NOTIFICATION')
 """
-
-
