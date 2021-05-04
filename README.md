@@ -2,7 +2,19 @@
 Accessible from https://vaccineavail.herokuapp.com/
 Checks for Vaccine Availability at your district and notifies you using E-mail.  
 Kindly read & accept the terms and conditions to register for updates.  
-Do subscribe to our website and star our GitHub repository.  
+Do subscribe to our website and star our GitHub repository. 
+
+### District Codes
+Find your District ID Here.
+
+### Project Description
+
+### Steps for Local Installation
+
+### Credits
+The Starter Code for this Project is Borrowed from
+- [Text](Link)
+- [Cowin Vaccination Slot Availability](https://github.com/bhattbhavesh91/cowin-vaccination-slot-availability)
 
 ### TERMS & CONDITIONS 
 - Please read these terms and conditions carefully before using Our Service.
