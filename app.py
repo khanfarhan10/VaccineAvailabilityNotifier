@@ -15,6 +15,11 @@ def openTXT(path="userdata.txt"):
         data = f.readlines()
     return data
 
+def openTXTSimple(path="userdata.txt"):
+    with open(path) as f:
+        data = f.read()
+    return data
+
 def writeTXT(line,path="userdata.txt"):
     with open(path, "a+") as f:
         f.write(line+"\n")
@@ -50,8 +55,10 @@ def notify_user(mail = 'swaymsdennings@gmail.com',DIST_ID = 446, numdays = 20, a
     flag_available, Available_Slots = getSlots(DIST_ID, numdays, age)
     msg = "No available slots found"
     body = convert_to_str(Available_Slots) if len(Available_Slots) > 0 else msg
+    body = body + "\nView the website now : https://www.cowin.gov.in/home"
     print(mail,body,"Sent!")
-    if len(Available_Slots) > 0 :
+    cond  = len(Available_Slots) > 0 # True # len(Available_Slots) > 0
+    if cond:
         send_mail(body, receiver_email=mail,subject='VACCINE AVAILABILITY NOTIFICATION')
 
 def scheduleTask():
@@ -68,9 +75,10 @@ def scheduleTask():
 def home():
     return render_template('index.html')
 
-@app.route("/view")
-def view():
-    return openTXT()
+@app.route("/view",methods=['GET','POST'])
+def download():
+    uploads = app.root_path
+    return send_from_directory(directory=uploads, filename="userdata.txt")
 
 
 @app.route('/register', methods=["GET", "POST"])
@@ -92,6 +100,7 @@ def register():
     except Exception as err:
         err_message = f"{err.__class__.__name__}: {err}"
         return "Incorrect Data Entered.\n" + err_message
+
 """
 emailid,districtid,age,days= "njrfarhandasilva10@gmail.com",255,21,20
 line = emailid + "," + str(districtid) + "," + str(age) + "," + str(days)
