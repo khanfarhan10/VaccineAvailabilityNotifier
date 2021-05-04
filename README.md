@@ -14,6 +14,7 @@ Find your District ID Here.
 ### Credits
 The Starter Code for this Project is Borrowed from
 - [Text](Link)
+- [covid-vaccination](https://github.com/nishantbuildsproducts/covid-vaccination)  
 - [Cowin Vaccination Slot Availability](https://github.com/bhattbhavesh91/cowin-vaccination-slot-availability)
 
 ### TERMS & CONDITIONS 
