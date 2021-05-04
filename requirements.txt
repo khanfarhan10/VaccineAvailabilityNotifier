@@ -1,0 +1,9 @@
+# pandas
+# numpy
+# ipykernel  # Notebooks
+# Add Heroku Files + Flask
+
+gunicorn # Deployment to Heroku
+
+Flask
+requests
